@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>筋肉2048 / Muscle 2048 - MuscleLove</title>
+  <meta name="description" content="Merge muscle girl tiles to reach LEGEND rarity! Classic 2048 with muscle evolution.">
+  <meta property="og:title" content="筋肉2048 / Muscle 2048 - MuscleLove">
+  <meta property="og:description" content="筋肉美女タイルを合体させてLEGENDを目指せ！💪">
+  <meta property="og:image" content="images/img1.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/img1.png" type="image/png">
+</head>
+<body>
+
+  <header class="header">
+    <h1>筋肉2048 / Muscle 2048</h1>
+    <div class="subtitle">タイルを合体させて最強の筋肉美女を目指せ！ / Merge tiles to reach GOD tier!</div>
+  </header>
+
+  <div class="score-bar">
+    <div class="score-box">
+      <div class="label">Score</div>
+      <div class="value" id="score">0</div>
+    </div>
+    <div class="score-box">
+      <div class="label">Best</div>
+      <div class="value best" id="best-score">0</div>
+    </div>
+    <div class="score-box">
+      <div class="label">Max Rarity</div>
+      <div class="value" id="max-rarity" style="font-size:0.9rem;">N</div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="btn primary" id="btn-new" title="New Game">🔄 New Game</button>
+    <button class="btn" id="btn-undo" title="Undo">↩ Undo <span class="undo-count" id="undo-count">3</span></button>
+    <button class="btn" id="btn-share" title="Share on X">𝕏 Share</button>
+    <button class="btn" id="btn-sound" title="Toggle Sound">🔊</button>
+  </div>
+
+  <div class="grid-wrapper">
+    <div class="grid" id="grid">
+      <!-- 16 background cells -->
+      <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+      <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+      <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+      <div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div><div class="cell-bg"></div>
+    </div>
+    <!-- Game Over overlay -->
+    <div class="overlay" id="overlay-gameover">
+      <h2>💪 Game Over!</h2>
+      <div class="final-score">Score: <span id="final-score">0</span></div>
+      <div style="font-size:0.85rem;color:var(--text-dim);margin-bottom:8px;">
+        Max Rarity: <span id="final-rarity">N</span>
+      </div>
+      <button class="btn primary" id="btn-retry">🔄 Try Again</button>
+      <button class="btn" id="btn-share2">𝕏 Share Result</button>
+    </div>
+  </div>
+
+  <div class="patreon-cta">
+    <a href="https://www.patreon.com/cw/MuscleLove" target="_blank" rel="noopener">
+      ❤️ Support on Patreon
+    </a>
+    <div class="cta-sub">Unlock exclusive muscle content / 限定コンテンツを解放</div>
+  </div>
+
+  <div class="how-to-play">
+    <details>
+      <summary>📖 How to Play / 遊び方</summary>
+      <div class="content">
+        <strong>EN:</strong> Swipe or use Arrow/WASD keys to slide tiles.
+        When two tiles of the same rarity collide, they merge into a higher rarity!
+        Reach GOD tier to win! Each merge adds to your score.<br><br>
+        <strong>JP:</strong> スワイプまたは矢印/WASDキーでタイルを移動。
+        同じレアリティのタイルがぶつかると合体して進化！
+        GODティアを目指そう！合体するたびにスコアアップ。<br><br>
+        <strong>Rarity:</strong> N → N+ → R → R+ → SR → SR+ → SSR → SSR+ → UR → LEGEND → GOD
+      </div>
+    </details>
+  </div>
+
+  <footer class="footer">
+    <p>© MuscleLove — <a href="https://www.patreon.com/cw/MuscleLove" target="_blank">Patreon</a></p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
